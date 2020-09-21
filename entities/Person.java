@@ -33,4 +33,8 @@ public class Person {
     public void setSex(String sex) {
         this.sex = sex;
     }
+	public void setName(int nextInt) {
+	}
+	public void setSex(int nextInt) {
+	}
 }
