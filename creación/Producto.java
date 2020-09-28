@@ -16,7 +16,7 @@ public class Producto {
     }
 
     public void laugh() {
-        System.out.println( producto + " jejeje!");
+        System.out.println( producto);
 
 	
 	}

@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 import creación.Producto;
 import entities.Person;
+import entities.data.PersonData;
 
 /**
  * Main
@@ -9,10 +10,14 @@ import entities.Person;
 public class Main {
 
     public static void main(String[] args) {
+
+        PersonData data=new PersonData();
+        
+
         Scanner input = new Scanner(System.in);
-        System.out.println("Ingrese nombre:");
-        String name= input.nextLine();
-        System.out.println("Escribiste: "+name);
+        //System.out.println("Ingrese nombre:");
+        //String name= input.nextLine();
+        //System.out.println("Escribiste: "+name);
         
         int opt = 0;
         do{
