@@ -1,6 +1,7 @@
 package entities;
 
 public class Person {
+    int id;
     String name;
     String sex;
 
@@ -37,4 +38,12 @@ public class Person {
 	}
 	public void setSex(int nextInt) {
 	}
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }

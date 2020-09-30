@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-import creación.Producto;
+
 import entities.Person;
 import entities.data.PersonData;
 
@@ -10,42 +10,53 @@ import entities.data.PersonData;
 public class Main {
 
     public static void main(String[] args) {
-
-        PersonData data=new PersonData();
-        
-
+        PersonData data = new PersonData();
         Scanner input = new Scanner(System.in);
-        //System.out.println("Ingrese nombre:");
-        //String name= input.nextLine();
-        //System.out.println("Escribiste: "+name);
-        
         int opt = 0;
-        do{
+        do {
             System.out.println("***** CRUD PERSON *****");
             System.out.println("1 List ");
             System.out.println("2 New ");
             System.out.println("3 Delete ");
+            System.out.println("4 Get by Id ");
+            System.out.println("5 update ");
             System.out.println("0 Exit ");
             System.out.println("Choice option: ");
             opt = input.nextInt();
             System.out.println("You chosed: " + opt);
             input.nextLine(); // Limpiar el buffer
             switch (opt) {
-                case 1: System.out.println("opcion 1 ");
-                Person p = new Person();
-                System.out.println("ingrese nombre: ");
-                p.setName(input.nextInt());
-                System.out.println("ingrese sexo: ");
-                p.setSex(input.nextInt());
+                case 1:
+                    System.out.println("Listado de personas ");
+                    for (Person d : data.list("")) {
+                        System.out.println(d.getId() + "\t" + d.getName());
+                    }
+                    break;
+                case 2:
+                    System.out.println("Nueva persona ");
+                    Person p= new Person();
+                    System.out.print("name: ");
+                    p.setName(input.nextLine());
 
-                System.out.println("getName= "+ p.getName()  + "sex= "+ p.getSex());
-                p.laugh();
-                break;
-                case 2: System.out.println("opcion 1 ");
-                break;
+                    data.create(p);
+                    break;
+                case 3:
+                    System.out.println("Eliminar persona ");                    
+                    System.out.print("id: ");
+                    data.delete(input.nextInt());
+                    break;
+                case 4:
+                    System.out.println("lista por Id");
+                    data.getListElement(input.nextInt());
+                    break;
+                case 5:
+                    break;
 
-                default: System.out.println("error.....verifique sus opciones");
+                default:
+                    System.out.println("Opcion no valida");
             }
-        }while(opt != 0);
+        } while (opt != 0);
+
 }
 }
+     
