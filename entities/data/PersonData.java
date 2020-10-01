@@ -40,6 +40,23 @@ public class PersonData {
             }
         }
     }
+    public void update(Person p) {
+        int index=0;
+        boolean b=false;
+        for (Person d: lis) {
+            if (d.getId() == p.getId()) {
+                //d = p;
+                lis.set(index, p);
+                b=true;
+                //break;
+            }
+            index++;
+        }
+        if (b)
+            System.out.println("encontrado");
+        else
+        System.out.println("no encontrado");
+    }
    
 }
         

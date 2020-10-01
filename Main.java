@@ -15,13 +15,15 @@ public class Main {
         int opt = 0;
         do {
             System.out.println("***** CRUD PERSON *****");
-            System.out.println("1 List ");
-            System.out.println("2 New ");
-            System.out.println("3 Delete ");
-            System.out.println("4 Get by Id ");
-            System.out.println("5 update ");
-            System.out.println("0 Exit ");
-            System.out.println("Choice option: ");
+            System.out.println(
+            "1 = List \n"+
+            "2 = New \n"+
+            "3 = Delete \n"+
+            "4 = lista por id \n"+
+            "5 = get  persona \n"+
+            "6 = update \n"+
+            "0 = Exit \n"+
+            "Choice option: ");
             opt = input.nextInt();
             System.out.println("You chosed: " + opt);
             input.nextLine(); // Limpiar el buffer
@@ -50,6 +52,22 @@ public class Main {
                     data.getListElement(input.nextInt());
                     break;
                 case 5:
+                    System.out.println("get persona ");                    
+                    System.out.print("id: ");
+                    Person d = data.get(input.nextInt());
+                    System.out.println("id: "+d.getId());
+                    System.out.println("id: "+d.getName());
+                    break;
+                    case 6:
+                    System.out.println("update persona ");                    
+                    System.out.print("id: ");
+                    Person de = data.get(input.nextInt());
+                    System.out.println("name current: "+de.getName());
+                    input.nextLine(); // Limpiar el buffer
+                    System.out.print("new name: ");
+                    de.setName(input.nextLine());
+    
+                    data.update(de);
                     break;
 
                 default:
